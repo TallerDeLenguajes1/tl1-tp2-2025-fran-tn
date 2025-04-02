@@ -1,1 +1,10 @@
+#Trabajo practico n2 - Nuñez Francisco Tomas
 
+## ¿Puedo ver el archivo tp2_1_2.c al moverme a main?
+	Cada rama es una rama de desarrollo independiente. Por lo que los cambios que realice en 'Opcion_2' no afectan a main
+
+## ¿Que cambios se ven en el Source Control?
+	Cambia el grafico, se ve como si del branch main saliera una rama, la cual es el branch Opcion_2, esta rama surge cuando se hizo un commit en le branch Opcion_2
+
+## ¿Que cambios se ven el Source Control luego de hacer merge?
+	Cambia el rafico, se ve como la rama del branch Opcion_2 se une con el branch main
