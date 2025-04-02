@@ -16,6 +16,8 @@ void listarPCS(st_maquina maquinas[CANT]);
 
 void mostrarMasVieja(st_maquina maquinas[CANT]);
 
+void mostrarMasVeloz(st_maquina maquinas[CANT]);
+
 int main(){
 
     srand(time(NULL));
@@ -39,6 +41,9 @@ int main(){
     }
 
     listarPCS(maquinas);
+    mostrarMasVieja(maquinas);
+    mostrarMasVeloz(maquinas);
+
 
     return 0;
 }
@@ -78,5 +83,29 @@ void mostrarMasVieja(st_maquina maquinas[CANT])
     printf("\n procesador de la maquina: ");
     puts(maquinas[aux].tipo_cpu);
         
+}
+
+void mostrarMasVeloz(st_maquina maquinas[CANT])
+{
+    int velocidad = 0, aux;
+
+    for(int i = 0; i < CANT; i++)
+    {
+        if(maquinas[i].velocidad > velocidad)
+        {
+            velocidad = maquinas[i].velocidad;
+            aux = i;
+        }
+    }
+
+    printf("\n~~~~~~~~~~~~~~~~~~~~~~~~");
+    printf("\n La maquina mas rapida es la numero %d", aux+1);
+    printf("\n caracterisitas: ");
+
+    printf("\n Velocidad de la maquina: %d", maquinas[aux].velocidad);
+    printf("\n año de la maquina: %d", maquinas[aux].year);
+    printf("\n Nucleos de la maquina: %d", maquinas[aux].capacidad_nucleos);
+    printf("\n procesador de la maquina: ");
+    puts(maquinas[aux].tipo_cpu);
 }
 
