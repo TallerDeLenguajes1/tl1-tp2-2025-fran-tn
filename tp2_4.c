@@ -13,12 +13,16 @@ struct{
     char tipo_cpu[MAX];
 } typedef st_maquina;
 
+void listarPCS(st_maquina maquinas[CANT]);
+
 int main(){
 
     srand(time(NULL));
 
     st_maquina maquinas[CANT];
+
     int cpu;
+
     char tipos[6][10] = {"Intel", "AMD", "Celeron",
                         "Athlon", "Core", "Pentium"};
 
@@ -33,12 +37,20 @@ int main(){
         strcpy(maquinas[i].tipo_cpu, tipos[cpu]);
     }
 
-    printf("\n Velocidad de la maquina: %d", maquinas[0].velocidad);
-    printf("\n año de la maquina: %d", maquinas[0].year);
-    printf("\n Nucleos de la maquina: %d", maquinas[0].capacidad_nucleos);
-    printf("\n procesador de la maquina: ");
-    puts(maquinas[0].tipo_cpu);
+    listarPCS(maquinas);
 
     return 0;
+}
+
+void listarPCS(st_maquina maquinas[CANT])
+{
+    for(int i = 0; i < CANT; i++)
+    {
+        printf("\n Velocidad de la maquina %d): %d", i+1, maquinas[i].velocidad);
+        printf("\n año de la maquina %d): %d", i+1, maquinas[i].year);
+        printf("\n Nucleos de la maquina %d): %d", i+1, maquinas[i].capacidad_nucleos);
+        printf("\n procesador de la maquina %d): ", i+1);
+        puts(maquinas[i].tipo_cpu);
+    }
 }
 
